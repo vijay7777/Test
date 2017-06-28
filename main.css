@@ -1,0 +1,182 @@
+@font-face {
+    font-family: sans-expert;
+    src: url(thesans-expert.ttf);
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+body {
+    /*font-family: 'sans-expert';*/
+    font-size: 15px;    
+}
+md-content{
+  overflow: hidden;
+}
+.md-toolbar {
+  min-height: 0;
+}
+.md-toolbar-tools{
+  background: #555;  
+  font-size: 30px;
+      height: auto;
+    max-height: 100px;
+    padding: 0 16px;
+    margin: 0;
+}
+.md-toolbar-tools h2 {
+  margin-left: -6px;
+}
+.md-toolbar-tools .md-button.md-icon-button {
+    margin: 0;
+    height: auto;
+    min-width: 0;
+    padding: 17px 18px 10px;
+    width: auto;
+    border-radius: 0;
+}
+.md-button.md-icon-button.active{
+  background: rgb(255,102,0);
+}
+.md-toolbar-tools .md-button[disabled]{
+  color: #ccc;
+}
+.material-icons{
+  font-size: 30px;
+}
+.header .title{
+  text-align: left;  
+}
+md-pagination-wrapper{
+  width: 100% !important;
+}
+.layout-row>.tab {
+  background: #707070;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 0;
+  text-transform: uppercase;
+}
+.layout-row>.tab.red{
+  background: #ed1c24;
+}
+.layout-row>.tab.gray3{
+  background: #999;
+}
+.main-value.layout-align-end-center {
+       padding-right: 6%;
+}
+.layout-row>.tab span{
+   font-size: 30px;
+}
+.layout-row>.tab i{
+   font-size: 35px;
+}
+.selections{
+  margin: 20px;
+}
+md-select{
+  margin: 0;
+}
+.small-icons .md-button.md-icon-button,.flex-15 .md-button.md-icon-button{
+  margin: 0;
+  width: 35px;
+  padding: 0;
+}
+.poll{
+  color: rgb(255,102,0);
+}
+.flex-15 i{
+  font-size: 20px;
+  color: #fff;
+   border-radius:20px;
+  background: rgb(255,102,0);
+}
+.flex-15 .md-button.md-icon-button{
+ width: 25px;height: 25px;
+}
+.flex-20 .md-button.md-icon-button{
+  color:  rgb(255,102,0);
+  font-size: 11px;
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+  height: 0;
+}
+.innerbox, .outerbox {
+   background: #707070;
+   border: 1px solid #999;
+}
+.innerbox.light, .outerbox.light {
+       background: #aaa;
+    border: 1px solid #ccc;
+}
+.innerbox {
+  width: 60%;
+  height: 10px;
+   
+}
+.outerbox{
+    width: 80%;
+    height: 120px;
+    font-size: 12px;
+    padding: 20px;
+    color: #fff;
+}
+.data-box{
+  width: 82%;
+  margin-bottom: 20px
+}
+.font-9{
+  font-size: 9px;  
+}
+.font-11{
+  font-size: 11px;  
+}
+.font-24{
+  font-size: 24px;  
+}
+.font-36{
+  font-size: 36px;
+  margin-top: 20px;  
+}
+.orange{
+  color: rgb(255,102,0);
+}
+.gray1{
+  color: #555;
+}
+.gray4{
+  color: #ccc;
+}
+
+.axis .domain {
+  display: none;
+}
+.details {
+  padding-top: 115px;
+}
+.md-datepicker-input-container, .md-select-value{
+  border-bottom: none; 
+} 
+md-datepicker{
+      border: 1px solid #ccc;
+    padding: 6px 3px;
+}
+md-select{
+      border: 1px solid #ccc;
+    padding: 1px 3px;
+}
+.md-datepicker-triangle-button.md-button.md-icon-button{
+      top: -2px;
+}
+@media only screen and (min-width: 768px) {
+  
+}
