@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html ng-app='RiskMonitor'>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Risk Monitor</title>
+  
+  
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css"> 
+</head>
+<body ng-cloak>
+<md-content ng-controller="mainController">
+
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+         <i class="material-icons">equalizer</i>
+        </md-button>
+
+        <h2 flex md-truncate>Risk Monitor</h2>
+
+        <md-button class="md-icon-button active" aria-label="Favorite">
+        <!--   <i class="material-icons">view_comfy</i> -->
+           <i class="material-icons">apps</i>
+        </md-button>
+
+        <md-button class="md-icon-button" aria-label="More">
+          <i class="material-icons">list</i>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <i class="material-icons">person</i>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <div layout="row" >
+      <div flex ng-repeat="tab in tabList" class="tab {{tab.class}}">
+        <div layout="row">
+          <div flex='55' layout="column" layout-align="center center">{{tab.type}}</div>
+          <div flex='45' layout="column" layout-align="center center">{{tab.percentage<0?'':'+'}}{{tab.percentage}}%
+          </div>
+        </div>    
+         <div flex class="main-value" layout="row" layout-align="end center"><span>1,231,123.5</span> <i class="material-icons">{{tab.percentage<0?'arrow_drop_down':'arrow_drop_up'}}</i></div>    
+      </div>  
+    </div>
+    <div layout="row" class="selections">
+        <div flex='30'> <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker></div>
+        <div flex='15' >
+           <md-select ng-model="ctrl.exposure">
+            <md-option><em>None</em></md-option>
+            <md-option ng-value="EXPOSURE">EXPOSURE</md-option>
+          </md-select>
+        </div>
+        <div flex='45'></div>
+        <div flex='10' layout="row" layout-align="end center" class="small-icons">     
+          <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+           <i class="material-icons gray1">view_comfy</i>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Favorite">
+          
+             <i class="material-icons poll">poll</i>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="More">
+            <i class="material-icons gray1">data_usage</i>
+          </md-button>        
+        </div>
+    </div>  
+    <div layout="row" class="selections">
+        <div flex='30'>
+          <div layout="row">
+            <div flex='45'>
+            <div layout="row">
+              <div flex='15' layout="column" >     
+                <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+                 <i class="material-icons">search</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                
+                   <i class="material-icons">mode_edit</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                  <i class="material-icons">clear</i>
+                </md-button>        
+              </div>
+               <div flex='80' layout="column" layout-align="center center"  class="box-container">
+                 <div class="innerbox"></div>
+                 <div class="outerbox">M > 40%</div>
+                 <div class="data-box">
+                   <div layout="row">
+                     <div flex layout="column" class="font-11">%VAL</div>
+                     <div flex layout="column" class="font-11 orange" layout-align="end center">ACCTS</div>
+                   </div>
+                    <div layout="row">
+                     <div flex layout="column" class="font-24">17%</div>
+                     <div flex layout="column"  class="font-24 orange" layout-align="end center">21</div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+            </div>
+             <div flex='55'>
+                <div layout="row">
+                   <div flex='20' layout="column" >     
+                <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+                 Details
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                
+                   Edit
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                  clear
+                </md-button>        
+              </div>
+              <div flex='15' layout="column" >     
+                <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+                 <i class="material-icons">search</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                
+                   <i class="material-icons">mode_edit</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                  <i class="material-icons">clear</i>
+                </md-button>        
+              </div>
+               <div flex='65' layout="column" layout-align="center center"  class="box-container">
+                 <div class="innerbox light"></div>
+                 <div class="outerbox light">M > 40%</div>
+                  <div class="data-box">
+                   <div layout="row">
+                     <div flex layout="column" class="font-11">%VAL</div>
+                     <div flex layout="column" class="font-11 orange" layout-align="end center">ACCTS</div>
+                   </div>
+                    <div layout="row">
+                     <div flex layout="column" class="font-24">17%</div>
+                     <div flex layout="column"  class="font-24 orange" layout-align="end center">21</div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+            </div>
+          </div>
+          <div layout="row">
+            <div flex='45'>
+            <div layout="row">
+              <div flex='15' layout="column" >     
+                <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+                 <i class="material-icons">search</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                
+                   <i class="material-icons">mode_edit</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                  <i class="material-icons">clear</i>
+                </md-button>        
+              </div>
+               <div flex='80' layout="column" layout-align="center center"  class="box-container">
+                 <div class="innerbox"></div>
+                 <div class="outerbox">M > 40%</div>
+                 <div class="data-box">
+                   <div layout="row">
+                     <div flex layout="column" class="font-11">%VAL</div>
+                     <div flex layout="column" class="font-11 orange" layout-align="end center">ACCTS</div>
+                   </div>
+                    <div layout="row">
+                     <div flex layout="column" class="font-24">17%</div>
+                     <div flex layout="column"  class="font-24 orange" layout-align="end center">21</div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+            </div>
+             <div flex='55'>
+                <div layout="row">
+                   <div flex='20' layout="column" >     
+                     
+              </div>
+              <div flex='15' layout="column" >     
+                <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+                 <i class="material-icons">search</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                
+                   <i class="material-icons">mode_edit</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                  <i class="material-icons">clear</i>
+                </md-button>        
+              </div>
+               <div flex='65' layout="column" layout-align="center center"  class="box-container">
+                 <div class="innerbox"></div>
+                 <div class="outerbox">M > 40%</div>
+                  <div class="data-box">
+                   <div layout="row">
+                     <div flex layout="column" class="font-11">%VAL</div>
+                     <div flex layout="column" class="font-11 orange" layout-align="end center">ACCTS</div>
+                   </div>
+                    <div layout="row">
+                     <div flex layout="column" class="font-24">17%</div>
+                     <div flex layout="column"  class="font-24 orange" layout-align="end center">21</div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+            </div>
+          </div>
+        </div>
+        <div flex='50' >
+           <svg width="600px" height="400"></svg>
+        </div>
+         <div flex='10' class="details">     
+           
+             <div flex layout="row" class="font-24 gray4">21,216.23</div>
+             <div flex layout="row" class="font-9 gray4">INDICATOR1</div>
+
+             <div flex layout="row" class="font-36 orange">11.2%</div>
+             <div flex layout="row" class="font-9 orange">EXPOSURE INDICATOR2</div>
+
+        </div>
+        <div flex='10' class="details">     
+             <div flex layout="row" class="font-24 gray4"  layout-align="end center">9,567.46</div>
+             <div flex layout="row" class="font-9 gray4"  layout-align="end center">INDICATOR3</div>
+
+             <div flex layout="row" class="font-36 orange"  layout-align="end center">505.56</div>
+             <div flex layout="row" class="font-9 orange"  layout-align="end center">EXPOSURE INDICATOR4</div>
+        </div>
+    </div>    
+</md-content>
+
+  <script src="https://code.angularjs.org/1.4.14/angular.min.js"></script>
+         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.14/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-aria.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-messages.min.js"></script>
+
+        <!-- Angular Material Library -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+       <script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+  <script src="scripts/app.js"></script> 
+</body>
+</html>
